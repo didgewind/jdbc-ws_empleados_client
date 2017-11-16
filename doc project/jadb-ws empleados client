@@ -1,0 +1,13 @@
+Cliente java del servicio declarado en jdbc-ws empleados postgres que no utiliza
+las clases de dicho proyecto sino que utiliza stubs generados a partir del wsdl (es independiente
+del lenguaje en que esté generado el servicio web).
+
+Para generar los stubs abrimos un terminal en la base del proyecto y hacemos
+
+	wsimport -s src -d bin http://localhost:8888/ws/empleados?wsdl
+	
+Esto además de generar los stubs del servicio genera clases del modelo propias
+(Empleado y EmpleadoArray) diferentes del modelo original.
+
+Las clases del cliente se encuentran en jdbc.empleados.ws.extclient; el paquete
+jdbc.empleados.ws.server son los stubs generados.
